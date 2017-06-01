@@ -63,7 +63,7 @@ do
     shift
 done
 
-exec kvm \
+exec qemu-system-x86_64 -L /usr/share/qemu/ \
     -m 2048 \
     --kernel linux/arch/x86/boot/bzImage \
     $initrd $append $serial $monitor $debug $kvm $mem
